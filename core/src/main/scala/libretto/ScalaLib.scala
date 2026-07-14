@@ -18,7 +18,7 @@ class ScalaLib[
   CoreLib <: libretto.CoreLib[DSL],
 ](
   val dsl: DSL,
-  val coreLib: CoreLib with libretto.CoreLib[dsl.type],
+  val coreLib: CoreLib & libretto.CoreLib[dsl.type],
 ) {
   import dsl._
   import coreLib._

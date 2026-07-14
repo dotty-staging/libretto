@@ -12,8 +12,8 @@ object BinarySearchTree {
 
 class BinarySearchTree[DSL <: ScalaDSL, CLib <: CoreLib[DSL], SLib <: ScalaLib[DSL, CLib]](
   val dsl: DSL,
-  val coreLib: CLib with CoreLib[dsl.type],
-  val scalaLib: SLib with ScalaLib[dsl.type, coreLib.type],
+  val coreLib: CLib & CoreLib[dsl.type],
+  val scalaLib: SLib & ScalaLib[dsl.type, coreLib.type],
 ) {
   import dsl._
   import coreLib._

@@ -21,9 +21,9 @@ class ScalaStreams[
   Streams <: CoreStreams[DSL, Lib],
 ](
   val dsl: DSL,
-  val coreLib: Lib with CoreLib[dsl.type],
-  val scalaLib: SLib with ScalaLib[dsl.type, coreLib.type],
-  val coreStreams: Streams with CoreStreams[dsl.type, coreLib.type],
+  val coreLib: Lib & CoreLib[dsl.type],
+  val scalaLib: SLib & ScalaLib[dsl.type, coreLib.type],
+  val coreStreams: Streams & CoreStreams[dsl.type, coreLib.type],
 ) {
   private val Tree = BinarySearchTree(dsl, coreLib, scalaLib)
 

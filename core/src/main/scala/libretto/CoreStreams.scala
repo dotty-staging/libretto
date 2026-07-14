@@ -11,7 +11,7 @@ object CoreStreams {
 
 class CoreStreams[DSL <: CoreDSL, Lib <: CoreLib[DSL]](
   val dsl: DSL,
-  val lib: Lib with CoreLib[dsl.type],
+  val lib: Lib & CoreLib[dsl.type],
 ) {
   import dsl._
   import lib._
